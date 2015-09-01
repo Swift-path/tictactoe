@@ -24,7 +24,7 @@ public class Ttt {
 	
 		while (NoWinner(gameBoard )){
 			printBoard(gameBoard);
-			System.out.println("its player " + player1+ " turn");
+			System.out.println("its " + WhoseTurn (player1) + " turn");
 			gameBoard = Tic (gameBoard, player1);
 			player1 = !player1;
 		}
@@ -44,9 +44,9 @@ public class Ttt {
 		public static int[][] Tic(int[][] gameBoard, Boolean player1) {
 			Scanner xi = new Scanner(System.in);
 			Scanner yi = new Scanner (System.in);
-			System.out.println("x coordinate");
+			System.out.println("enetr x coordinate 0,1, or 2");
 			int x = xi.nextInt();
-			System.out.println("y");
+			System.out.println("enter y coordinate 0,1, or 2");
 			int y = yi.nextInt();
 			if (player1) {
 				gameBoard[x][y] = 1;
@@ -69,11 +69,10 @@ public class Ttt {
 					if (counter == 3) {
 						System.out.println("you win");
 						return false;
-					}
+			
 				}
 					last = current;
 				}
-				
 			}
 			for (int y = 0; y < 3; y++) { 
 				for (int x = 0; x < 3; x++) {
@@ -81,17 +80,35 @@ public class Ttt {
 					if (last == current && last != 0) {
 							counter++;
 					}
-				
 				if (counter == 3) {
-				System.out.println("You won!");
-				return false;
+					System.out.println("You won!");
+					return false;
 				}
 				last = current;
 				}
+			}
 			for (int x = 0; x < 3; x++) {
 				current = gameBoard[x][yDiag];
-				
+				if (last == current && last !=0) {
+					counter++;
+				}
+				if (counter == 3) {
+					System.out.println("win!");
+					return false;
+					
+				}
+				last = current;
+				yDiag--;
 			}
+			return true;
 		}
+
+			public static String WhoseTurn(boolean player1) {
+				if (player1) {
+					return "player 1";
+				} else {
+					return "player 2";
+					}
+			}
 }
 
