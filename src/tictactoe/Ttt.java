@@ -18,7 +18,7 @@ public class Ttt {
 		 * 
 		 * 
 		 */
-		char[][] gameBoard = new int [3][3];
+		char [][] gameBoard = new char [3][3];
 		boolean player1 = true;
 		System.out.println ("tictactoe");
 	
@@ -30,6 +30,10 @@ public class Ttt {
 		}
 	 	
 	}
+	/**
+	 * 
+	 * @param gameBoard
+	 */
 		public static void printBoard(char[][] gameBoard) {
 			String newLine = System.getProperty("line.separator");
 			
@@ -55,12 +59,17 @@ public class Ttt {
 			System.out.println("enter y coordinate 0,1, or 2");
 			int y = yi.nextInt();
 			if (player1) {
-				gameBoard[x][y] = 'x';
+				gameBoard[x][y] = 'X';
 			} else {
-				gameBoard[x][y] = 'o';
+				gameBoard[x][y] = 'O';
 			}
 			return gameBoard;
 			}
+		/**
+		 * 
+		 * @param gameBoard
+		 * @return
+		 */
 		public static boolean NoWinner(char[][] gameBoard) {
 			int current;
 			int last = 0;
@@ -108,6 +117,11 @@ public class Ttt {
 			}
 			return true;
 		}
+		/**
+		 * 
+		 * @param player1
+		 * @return
+		 */
 
 			public static String WhoseTurn(boolean player1) {
 				if (player1) {
