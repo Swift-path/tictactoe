@@ -58,9 +58,9 @@ public class Ttt {
 			int x = xi.nextInt();
 			System.out.println("enter y coordinate 0,1, or 2");
 			int y = yi.nextInt();
-			if (player1) {
+			if (player1 && gameBoard[x][y] != 'O') {
 				gameBoard[x][y] = 'X';
-			} else {
+			} else if (!player1 && gameBoard[x][y] != 'X') {
 				gameBoard[x][y] = 'O';
 			}
 			return gameBoard;
