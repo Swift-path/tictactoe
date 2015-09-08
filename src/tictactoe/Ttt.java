@@ -78,10 +78,11 @@ public class Ttt {
 			for (int x = 0; x < 3; x++) {
 				for (int y = 0; y < 3; y++) {
 					current = gameBoard [x][y];
+					
 					if (last == current && last != 0){
-						counter++;
+						counter++; //how many in a row
 					}
-					if (counter == 3) {
+					if (counter == 2) {
 						System.out.println("you win");
 						return false;
 			
@@ -89,28 +90,41 @@ public class Ttt {
 					last = current;
 				}
 			}
+			counter = 0;
 			for (int y = 0; y < 3; y++) { 
-				for (int x = 0; x < 3; x++) {
+				for (int x = 0; x < 3; x++) { //horizontal patter
 					current = gameBoard[x][y];
 					if (last == current && last != 0) {
 							counter++;
 					}
-				if (counter == 3) {
+				if (counter == 2) {
 					System.out.println("You won!");
 					return false;
 				}
 				last = current;
 				}
 			}
-			for (int x = 0; x < 3; x++) {
+			counter = 0;
+			for (int y = 0; y < 3; y++) { // check for a diagnal down pattern
+	 			current = gameBoard[y][y];
+	 			if (last == current && last != 0) {
+	 				counter++;
+	 			}
+	 			if (counter == 2) {
+	 				System.out.println("You won!");
+	 				return false;
+	 			}
+	 			last = current;
+	 		}
+			counter = 0;
+			for (int x = 0; x < 3; x++) { //diaganal up pattert
 				current = gameBoard[x][yDiag];
 				if (last == current && last !=0) {
 					counter++;
 				}
-				if (counter == 3) {
+				if (counter == 2) {
 					System.out.println("win!");
-					return false;
-					
+					return false;	
 				}
 				last = current;
 				yDiag--;
