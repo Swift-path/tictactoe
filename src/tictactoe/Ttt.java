@@ -54,13 +54,14 @@ public class Ttt {
 		public static char[][] Tic(char[][] gameBoard, Boolean player1) {
 			Scanner xi = new Scanner(System.in);
 			Scanner yi = new Scanner (System.in);
+			
 			System.out.println("enetr x coordinate 0,1, or 2");
 			int x = xi.nextInt();
 			System.out.println("enter y coordinate 0,1, or 2");
 			int y = yi.nextInt();
-			if (player1 && gameBoard[x][y] != 'O') {
+			if (player1 && x <= 2 && y <= 2 && gameBoard[x][y] != 'O') {
 				gameBoard[x][y] = 'X';
-			} else if (!player1 && gameBoard[x][y] != 'X') {
+			} else if (!player1 && x <= 2 && y <= 2 && gameBoard[x][y] != 'X') {
 				gameBoard[x][y] = 'O';
 			}
 			return gameBoard;
