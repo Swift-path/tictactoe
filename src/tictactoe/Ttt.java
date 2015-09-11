@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Ttt {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		/** Pseudo code
 		 * game board prints with 9 possible spots with promt
 		 * variables defined as x and o
@@ -18,6 +17,9 @@ public class Ttt {
 		 * 
 		 * 
 		 */
+		/**
+		 * begins the loop for the game
+		 */
 		char [][] gameBoard = new char [3][3];
 		boolean player1 = true;
 		System.out.println ("tictactoe");
@@ -31,7 +33,7 @@ public class Ttt {
 	 	
 	}
 	/**
-	 * 
+	 * prints the 2d array
 	 * @param gameBoard
 	 */
 		public static void printBoard(char[][] gameBoard) {
@@ -46,7 +48,8 @@ public class Ttt {
 				}
 			}
 		/**
-		 * 
+		 * allows for inputs
+		 * prints board with new input
 		 * @param gameBoard
 		 * @param player1
 		 * @return
@@ -54,7 +57,6 @@ public class Ttt {
 		public static char[][] Tic(char[][] gameBoard, Boolean player1) {
 			Scanner xi = new Scanner(System.in);
 			Scanner yi = new Scanner (System.in);
-			
 			System.out.println("enetr x coordinate 0,1, or 2");
 			int x = xi.nextInt();
 			System.out.println("enter y coordinate 0,1, or 2");
@@ -67,7 +69,7 @@ public class Ttt {
 			return gameBoard;
 			}
 		/**
-		 * 
+		 * checks to  see if there is a winner
 		 * @param gameBoard
 		 * @return
 		 */
@@ -133,7 +135,7 @@ public class Ttt {
 			return true;
 		}
 		/**
-		 * 
+		 * checks if it is or isn't player ones turn
 		 * @param player1
 		 * @return
 		 */
